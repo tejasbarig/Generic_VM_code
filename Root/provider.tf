@@ -6,11 +6,11 @@ terraform {
    }
   }
   
-#   backend "azurerm" {
-#    resource_group_name = ""
-#    storage_account_name = ""
-#    container_name = ""
-#    key = ""
+backend "azurerm" {
+resource_group_name = "tejas-rg"
+storage_account_name = "tejassaa"
+container_name = "tejascs"
+key = "dev.generic_code.tfstate"
 
 }
 
