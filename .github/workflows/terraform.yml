@@ -42,5 +42,7 @@ jobs:
           tenant-id: 34969ee9-a0d2-43d0-bf8a-b3bd43c55eea
           subscription-id: 98473d5b-c639-404e-9bf2-91559fe65ff8
 
-
-          
+      - name: Terraform Init
+        id: init
+        run: terraform init -input=false
+        working-directory: Root
