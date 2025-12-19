@@ -111,8 +111,8 @@ linux_vms = {
     os_disk_caching              = "ReadWrite"
     os_disk_storage_account_type = "Standard_LRS"
     vm_publisher                 = "Canonical"
-    vm_offer                     = "ubuntu-24_04-lts"
-    vm_sku                       = "24_04-lts"
+    vm_offer                     = "0001-com-ubuntu-server-focal"
+    vm_sku                       = "20_04-lts"
     vm_version                   = "latest"
     custom_data                  = <<-EOT
       #!/bin/bash
