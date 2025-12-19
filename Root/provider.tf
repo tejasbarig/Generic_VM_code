@@ -11,7 +11,7 @@ resource_group_name = "tejas-rg"
 storage_account_name = "tejassaa"
 container_name = "tejascs"
 key = "dev.generic_code.tfstate"
-
+}
 }
 
 provider "azurerm" {
