@@ -1,4 +1,4 @@
-name: Terraform_infra
+name: Generic_VM_code_Infra
 
 permissions:
   id-token: write
