@@ -79,3 +79,43 @@ variable "linux_vms" {
   ))
 
 }
+
+variable "mssql_server" {
+  type = map(object({
+    mssql_server_name                  = string
+    rg_name                            = string
+    location                           = string
+    version                            = string
+    mssql_administrator_login          = string
+    mssql_administrator_login_password = string
+    }
+  ))
+
+}
+
+variable "mssql_db" {
+
+  type = map(object({
+    mssql_db_name     = string
+    mssql_server_name = string
+    rg_name           = string
+    sku_name          = string
+    collation         = optional(string, "SQL_Latin1_General_CP1_CI_AS")
+    max_size_gb       = optional(number, 5)
+    zone_redundant    = optional(bool, false)
+  }))
+}
+
+variable "mssql_firewall_rule" {
+  type = map(object({
+    mssql_firewall_rule_name = string
+    rg_name                  = string
+    server_id                = string
+    mssql_server_name        = string
+    start_ip_address         = string
+    end_ip_address           = string
+
+    }
+  ))
+
+}

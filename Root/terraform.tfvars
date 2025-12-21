@@ -129,7 +129,7 @@ linux_vms = {
     linux_vm_name                = "vm-bck1-frc-tej"
     rg_name                      = "rg1-frc-tej"
     location                     = "francecentral"
-    size                         = "Standard_F2"
+    size                         = "Standard_D2s_v3"
     admin_username               = "tejasadmin"
     admin_password               = "Welcometejas1@"
     nic_name                     = "nic2-frc-tej"
@@ -152,6 +152,57 @@ linux_vms = {
   }
 }
 
+##############################
+mssql_server = {
+  "mssql_server_1" = {
+    mssql_server_name            = "frontend-vm-sql"
+    rg_name                      = "rg1-frc-tej"
+    location                     = "francecentral"
+    version                      = "12.0"
+    mssql_administrator_login          = "tejasadmin"
+    mssql_administrator_login_password = "Welcometejas1@"
+
+  }
+}
+
+############################## 
+mssql_db = {
+  db1 = {
+    mssql_db_name     = "app_tej_db"
+    mssql_server_name = "frontend-vm-sql"
+    rg_name           = "rg1-frc-tej"
+    sku_name          = "S0"
+  }
+  db2 = {
+    mssql_db_name     = "analytic_tej_sdb"
+    mssql_server_name = "frontend-vm-sql"
+    rg_name           = "rg1-frc-tej"
+    sku_name          = "S1"
+    max_size_gb       = 20
+    zone_redundant    = false
+  }
+}
 
 ##############################
+
+mssql_firewall_rule = {
+  mssql_firewall_rule-AllowIP1 = {
+    server_id                = "server1"
+    mssql_server_name        = "frontend-vm-sql"
+    mssql_firewall_rule_name = "AllowIP1"
+    rg_name           = "rg1-frc-tej"
+    start_ip_address         = "10.0.17.62"
+    end_ip_address           = "10.0.17.62"
+  }
+
+  mssql_firewall_rule--AllowIP2 = {
+    server_id                = "server1"
+    mssql_server_name        = "frontend-vm-sql"
+    mssql_firewall_rule_name = "AllowIP2"
+    rg_name           = "rg1-frc-tej"
+    start_ip_address         = "49.43.131.11"
+    end_ip_address           = "49.43.131.11"
+  }
+}
+
 ##############################
